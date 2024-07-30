@@ -1,0 +1,22 @@
+// models/exercises.js
+const knex = require('../db/knex');
+
+const Exercises = {
+  getAll() {
+    return knex('exercises');
+  },
+  getById(id) {
+    return knex('exercises').where('id', id);
+  },
+  create(exercise) {
+    return knex('exercises').insert(exercise);
+  },
+  update(id, exercise) {
+    return knex('exercises').where('id', id).update(exercise);
+  },
+  delete(id) {
+    return knex('exercises').where('id', id).del();
+  }
+};
+
+module.exports = Exercises;

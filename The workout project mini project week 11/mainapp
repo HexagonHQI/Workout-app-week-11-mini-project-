@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+const exercisesRouter = require('./routes/exercisesRoutes');
+
+
+app.use('/api/exercises', exercisesRouter);
+
+
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});

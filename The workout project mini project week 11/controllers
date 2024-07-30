@@ -1,0 +1,16 @@
+// controllers/exercisesController.js
+const Exercises = require('../models/exercises');
+
+const exercisesController = {
+  getAll: async (req, res, next) => {
+    try {
+      const exercises = await Exercises.getAll();
+      res.json(exercises);
+    } catch (error) {
+      next(error);
+    }
+  },
+  // ... other controller functions
+};
+
+module.exports = exercisesController;
